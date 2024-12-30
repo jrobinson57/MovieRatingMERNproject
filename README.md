@@ -1,7 +1,7 @@
 <pre>
 <h1>MovieRatingMERNwebapp</h1>
 This was a full stack project for my web programming course at Rowan in the spring of 2024
-This is a movie rating app using the MERN stack and other various technologies like vite, axios, cors, bcrypt, jwts
+It is a movie rating app using the MERN stack and other various technologies like vite, axios, cors, bcrypt, jwts
 
 It contains a secure account creation page, login page, a page for all CRUD operations, about page and dummy contact us page
 
