@@ -1,0 +1,19 @@
+.form-range {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.form-range::-webkit-slider-thumb {
+    background-color: #28a745; /* Green thumb */
+    border: none;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.form-range::-webkit-slider-runnable-track {
+    background-color: #ddd;
+    height: 5px;
+    border-radius: 3px;
+}

@@ -6,6 +6,7 @@ import styles from "./Movies.module.css";
 function Movies() {
     axios.defaults.withCredentials = true;
     const [movies, setMovies] = useState([]);
+    const [userName, setUserName] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -18,6 +19,20 @@ function Movies() {
             return;
         }
 
+         // Fetch user name
+            axios.get("http://localhost:3001/userInfo", {
+                headers: { Authorization: `Bearer ${token}` },
+            })
+            .then((response) => {
+                setUserName(response.data.name); // Set the user's name in state
+            })
+            .catch((err) => {
+                console.log(err);
+                console.log("Failed to fetch user information.");
+            });
+
+
+        // Fetch movies
         axios.get("http://localhost:3001", { withCredentials: true })
             .then(response => {
                 const data = response.data;
@@ -53,6 +68,7 @@ function Movies() {
         <div className={styles.pageBackground}>
             <div className={styles.banner}>
                 <div className={styles.navbar}>
+                    <button className={styles.greetingButton}>Hello, {userName || "Guest"}!</button> {/* Display user name */}
                     <img src="/favicon.ico" alt="favicon" />
                     <Link to={`/`} className={`${styles.btn} ${styles.btnWarning}`}>Home</Link>
                     <Link to={`/about/`} className={`${styles.btn} ${styles.btnWarning}`}>About</Link>

@@ -181,6 +181,22 @@ app.post("/createMovie", verifyUser, (req, res) => {
     }) .catch(err => res.json(err))
   })
 
+  // Endpoint for fetching username
+  app.get("/userInfo", verifyUser, async (req, res) => {
+    const userId = req.user.id; // Extract user ID from the token
+  
+    try {
+      const user = await RegisterUserModel.findById(userId, "name"); // Fetch only the name field
+      if (!user) {
+        return res.status(404).json({ error: "User not found" });
+      }
+  
+      res.json({ name: user.name }); // Return the user's name
+    } catch (error) {
+      res.status(500).json({ error: "Error fetching user information" });
+    }
+  });
+
 
 // Starting the server
 app.listen(3001, () => {

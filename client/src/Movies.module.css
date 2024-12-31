@@ -57,6 +57,23 @@ body {
     color: gold; 
 }
 
+.greetingButton {
+    background-color: rgb(59, 57, 57);
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.greetingButton:hover {
+    background-color: darkred;
+}
+
 .btn {
     padding: 0.5rem 1rem;
     border: none;
