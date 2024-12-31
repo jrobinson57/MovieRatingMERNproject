@@ -7,7 +7,7 @@ It contains a secure account creation page, login page, a page for all CRUD oper
 
 <h2>Quick start</h2>
 If you'd like to try this out for yourself, follow these instructions:
-1.) Download the zip files, unzip and open the MernMovie-main folder in your IDE
+1.) Download the project files into a folder, and open the folder in your IDE
 2.) Make sure you install the required packages
     - Client: "npm install bootstrap axios react-router-dom"
     - Server: "npm install express mongoose cors nodemon jsonwebtoken bcrypt cookie-parser"
