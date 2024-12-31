@@ -176,7 +176,7 @@ app.post("/createMovie", verifyUser, (req, res) => {
           })
       } else {
         // if no user found in DB collection
-        res.json("No record exists for this email/pass combo")
+        res.json("No record exists for this email/pass combo");
       }
     }) .catch(err => res.json(err))
   })

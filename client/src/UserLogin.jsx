@@ -16,6 +16,13 @@ function UserLogin() {
     axios.defaults.withCredentials = true;
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        // Client-side validation
+        if (!email || !password) {
+            alert("Please fill in both email and password.");
+            return;
+        }
+
         axios.post("http://localhost:3001/login", {email, password})
         .then(result => {
             console.log(result)
@@ -23,10 +30,15 @@ function UserLogin() {
                 localStorage.setItem('token', result.data.token);
                 navigate('/'); 
             }
+            else
+            {
+                alert("No record exists for that username/password combo. Please try again.");
+            }
     })
         .catch(err => {
             console.log(err);
             console.log("Login failed. Please try again.");
+            alert("Login failed. Please try again.");
     })
     }
 
