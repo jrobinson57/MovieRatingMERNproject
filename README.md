@@ -18,6 +18,6 @@ If you'd like to try this out for yourself, follow these instructions:
     - Go into \server\index.js and change the variables under the "Mongo" comment to your values, should be around line 12
 4.) I recommend splitting your terminal and on one side cd into \client and cd into \server on the other
     - In the client, type "npm run dev"
-    - In the client, type "npm start"
+    - In the server, type "npm start"
 5.) You can now visit http://localhost:5173/ in your browser to see the website in action!
 </pre>
